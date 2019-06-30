@@ -1,86 +1,84 @@
 .dropbox {
-    outline: none;
-    width: 225px;
-    height: 20px;
-    margin: 20px
+  outline: none;
+  width: 225px;
+  height: 20px;
+  margin: 20px;
 }
 
-
 .slot2 {
-    width: 700px;
-    height: 100px;
-    margin: 15px;
-    border-top-left-radius: 180px;
-    border-bottom-left-radius: 180px;
-    background-color: rgb(69, 155, 235);
-    background-image: url(pokeball.png);
-    background-repeat: no-repeat;
-    background-size: 100px;
+  width: 700px;
+  height: 100px;
+  margin: 15px;
+  border-top-left-radius: 180px;
+  border-bottom-left-radius: 180px;
+  background-color: rgb(69, 155, 235);
+  background-image: url(pokeball.png);
+  background-repeat: no-repeat;
+  background-size: 100px;
 }
 
 .dropdown {
-    width: 145px;
-    height: 20px;
-    justify-content: center;
-    align-self: center;
-    outline: none;
-    border-radius: 33px;
-    cursor: pointer;
+  width: 145px;
+  height: 20px;
+  justify-content: center;
+  align-self: center;
+  outline: none;
+  border-radius: 33px;
+  cursor: pointer;
 }
 
 .poke {
-    height: 100px;
-    width: 125px;
-    display: flex;
-    align-self: center;
+  height: 100px;
+  width: 125px;
+  display: flex;
+  align-self: center;
 }
 
 .pokeName {
-    display: flex;
-    flex-direction: column;
-    width: 160px;
-    height: 30px;
-    border: none;
-    font-weight: 500px;
-    font-size: 30px;
-    margin: 45px;
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  height: 30px;
+  border: none;
+  font-weight: 500px;
+  font-size: 30px;
+  margin: 45px;
 }
 
 .pokeInfo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .pokeForm {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .pokeLevel {
-    height: 30px;
-    width: 75px;
-    font-weight: 500px;
-    font-size: 30px;
-    border: none;
-    background: transparent;
-    margin: 5px;
+  height: 30px;
+  width: 75px;
+  font-weight: 500px;
+  font-size: 30px;
+  border: none;
+  background: transparent;
+  margin: 5px;
 }
 
 .levelUp {
-    font-weight: 500px;
-    font-size: 20px;
-    border: none;
-    background: transparent;
-    margin: 5px;
-    width: 100px;
-    outline: none;
-    cursor: pointer;
+  font-weight: 500px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  margin: 5px;
+  width: 100px;
+  outline: none;
+  cursor: pointer;
 }
 
 .levelUp:hover {
-    color: white
+  color: white;
 }

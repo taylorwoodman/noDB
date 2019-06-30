@@ -8,11 +8,10 @@ class Rest extends Component {
     super();
     this.state = {
       level: 70
-    } 
-    this.pokeImage = this.pokeImage.bind(this)
+    };
+    this.pokeImage = this.pokeImage.bind(this);
     this.selectPoke = this.selectPoke.bind(this);
   }
- 
 
   selectPoke(e) {
     axios.get(e.target.value).then(response => {
@@ -21,21 +20,19 @@ class Rest extends Component {
         name: response.data.name,
         sprites: response.data.sprites,
         level: response.data.level
-      }
+      };
       console.log(response.data);
-      axios.post("http://localhost:8080/pokemon", poke)
-      .then(() => {
-        this.props.getParty()
+      axios.post("http://localhost:8080/pokemon", poke).then(() => {
+        this.props.getParty();
       });
     });
   }
 
-  levelUp = () =>{
-    
-    if(this.state.level < 100){
-      this.setState({level: this.state.level + 1})
+  levelUp = () => {
+    if (this.state.level < 100) {
+      this.setState({ level: this.state.level + 1 });
     }
- }
+  };
 
   pokeImage(e) {
     return (
@@ -56,7 +53,6 @@ class Rest extends Component {
 
     return (
       <div>
-        
         <div>
           {this.props.selectedPoke ? (
             <div className="slot2">
@@ -64,7 +60,12 @@ class Rest extends Component {
                 {this.pokeImage()}
                 <div className="pokeName">{this.props.selectedPoke.name}</div>
                 <form className="pokeForm">
-                  <input className="pokeLevel"type="text" id="number" value={this.state.level} />
+                  <input
+                    className="pokeLevel"
+                    type="text"
+                    id="number"
+                    value={this.state.level}
+                  />
                   <input
                     className="levelUp"
                     type="button"
