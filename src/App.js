@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./reset.css";
 import axios from "axios";
 import Main from "./components/main";
 import Rest from "./components/rest";
+import Stateless from "./components/stateless";
 
 class App extends Component {
   constructor() {
@@ -30,7 +32,8 @@ class App extends Component {
   getParty() {
     axios.get("http://localhost:8080/pokemon").then(response => {
       this.setState({ party: response.data });
-    });
+    })
+    .catch(console.error);
   }
 
   removeMember(id) {
@@ -40,49 +43,53 @@ class App extends Component {
       .then(() => axios.get("http://localhost:8080/pokemon"))
       .then(response => {
         this.setState({ party: response.data });
-      });
+      })
+      .catch(console.error);
   }
 
   render() {
-    console.log(this.state.party);
+    const {pokemon} = this.state
+    const [first, second, third, fourth,fifth, sixth] = this.state.party
     return (
       <div className="App">
         <div className="main">
           <Main
-            pokemon={this.state.pokemon}
+            pokemon={pokemon}
             getParty={this.getParty}
-            selectedPoke={this.state.party[0]}
+            selectedPoke={first}
           />
+          <Stateless />
         </div>
         <div className="rest3">
           <Rest
-            pokemon={this.state.pokemon}
+            pokemon={pokemon}
             getParty={this.getParty}
-            selectedPoke={this.state.party[1]}
+            selectedPoke={second}
           />
           <Rest
-            pokemon={this.state.pokemon}
+            pokemon={pokemon}
             getParty={this.getParty}
-            selectedPoke={this.state.party[2]}
+            selectedPoke={third}
           />
           <Rest
-            pokemon={this.state.pokemon}
+            pokemon={pokemon}
             getParty={this.getParty}
-            selectedPoke={this.state.party[3]}
+            selectedPoke={fourth}
           />
           <Rest
-            pokemon={this.state.pokemon}
+            pokemon={pokemon}
             getParty={this.getParty}
-            selectedPoke={this.state.party[4]}
+            selectedPoke={fifth}
           />
           <Rest
-            pokemon={this.state.pokemon}
+            pokemon={pokemon}
             getParty={this.getParty}
-            selectedPoke={this.state.party[5]}
+            selectedPoke={sixth}
           />
           <button className="wipe" onClick={() => this.removeMember()}>
             Remove Member
           </button>
+          
         </div>
       </div>
     );

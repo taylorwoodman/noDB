@@ -22,9 +22,11 @@ class Rest extends Component {
         level: response.data.level
       };
       console.log(response.data);
-      axios.post("http://localhost:8080/pokemon", poke).then(() => {
+      axios.post("http://localhost:8080/pokemon", poke)
+      .then(() => {
         this.props.getParty();
-      });
+      })
+      .catch(console.error);
     });
   }
 

@@ -3,7 +3,7 @@ import "./main.css";
 import axios from "axios";
 import "./pokeball.png";
 
-class Rest extends Component {
+class Main extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,7 +24,8 @@ class Rest extends Component {
       console.log(response.data);
       axios.post("http://localhost:8080/pokemon", poke).then(() => {
         this.props.getParty();
-      });
+      })
+      .catch(console.error);
     });
   }
 
@@ -93,4 +94,4 @@ class Rest extends Component {
   }
 }
 
-export default Rest;
+export default Main;
