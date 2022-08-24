@@ -12,7 +12,7 @@ class App extends Component {
 
     this.state = {
       party: [],
-      pokemon: []
+      pokemon: [],
     };
     this.getParty = this.getParty.bind(this);
   }
@@ -21,7 +21,7 @@ class App extends Component {
     this.getParty();
     axios
       .get("https://pokeapi.co/api/v2/pokemon?limit=151")
-      .then(response => {
+      .then((response) => {
         this.setState({ pokemon: response.data.results });
 
         console.log(response.data.results);
@@ -30,10 +30,12 @@ class App extends Component {
   }
 
   getParty() {
-    axios.get("http://localhost:8080/pokemon").then(response => {
-      this.setState({ party: response.data });
-    })
-    .catch(console.error);
+    axios
+      .get("http://localhost:8080/pokemon")
+      .then((response) => {
+        this.setState({ party: response.data });
+      })
+      .catch(console.error);
   }
 
   removeMember(id) {
@@ -41,15 +43,15 @@ class App extends Component {
     axios
       .delete(`http://localhost:8080/pokemon/${id}`)
       .then(() => axios.get("http://localhost:8080/pokemon"))
-      .then(response => {
+      .then((response) => {
         this.setState({ party: response.data });
       })
       .catch(console.error);
   }
 
   render() {
-    const {pokemon} = this.state
-    const [first, second, third, fourth,fifth, sixth] = this.state.party
+    const { pokemon } = this.state;
+    const [first, second, third, fourth, fifth, sixth] = this.state.party;
     return (
       <div className="App">
         <div className="main">
@@ -89,7 +91,6 @@ class App extends Component {
           <button className="wipe" onClick={() => this.removeMember()}>
             Remove Member
           </button>
-          
         </div>
       </div>
     );
